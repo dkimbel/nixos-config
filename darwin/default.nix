@@ -22,9 +22,9 @@ let user = "dk"; in
     shells = [ pkgs.fish ];
     systemPackages = with pkgs; [
       coreutils
+      fd
       gnumake
       killall
-      kitty
       openssh
       tree
       unzip

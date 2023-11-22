@@ -24,11 +24,16 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     }; 
+    homebrew-cask-fonts = {
+      url = "github:homebrew/homebrew-cask-fonts";
+      flake = false;
+    };
     mkAlias = {
       url = "github:reckenrode/mkAlias";
     };
+    mkAlias.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, nixpkgs, mkAlias } @inputs:
+  outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, homebrew-cask-fonts, nixpkgs, mkAlias }:
     let
       user = "dk";
       systems = [ "aarch64-darwin" ];
@@ -50,7 +55,6 @@
       darwinConfigurations = let user = "dk"; in {
         macos = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
-          inputs = inputs;
           modules = [
             nix-homebrew.darwinModules.nix-homebrew
             home-manager.darwinModules.home-manager
@@ -62,9 +66,13 @@
                   "homebrew/homebrew-core" = homebrew-core;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-bundle" = homebrew-bundle; 
+                  "homebrew/homebrew-cask-fonts" = homebrew-cask-fonts;
                 };
                 mutableTaps = false;
                 autoMigrate = true;
+              };
+              home-manager.extraSpecialArgs = {
+                inherit mkAlias;
               };
             }
             ./darwin
