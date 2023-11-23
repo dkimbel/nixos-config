@@ -75,6 +75,10 @@ let user = "dk"; in
 
     defaults = {
       CustomUserPreferences = {
+        "com.apple.TextEdit" = {
+          NSShowAppCentricOpenPanelInsteadOfUntitledFile = false;
+          RichText = false;
+        };
         "com.apple.WindowManager" = {
           EnableStandardClickToShowDesktop = 0;
         };
