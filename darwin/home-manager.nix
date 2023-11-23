@@ -87,9 +87,6 @@ in
           ignores = [ "*.swp" ];
           userName = name;
           userEmail = email;
-          lfs = {
-            enable = true;
-          };
           extraConfig = {
             init.defaultBranch = "main";
             core = { 
@@ -115,6 +112,9 @@ in
             adjust_line_height = "125%";
           };
           shellIntegration.enableFishIntegration = true;
+        };
+        ssh = {
+          enable = true;
         };
       };
     };
