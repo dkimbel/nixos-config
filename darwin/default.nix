@@ -68,6 +68,12 @@ let user = "dk"; in
     checks.verifyNixPath = false;
 
     defaults = {
+      CustomUserPreferences = {
+        "com.apple.WindowManager" = {
+          EnableStandardClickToShowDesktop = 0;
+        };
+      };
+
       LaunchServices = {
         LSQuarantine = false;
       };
