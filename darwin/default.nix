@@ -67,7 +67,41 @@ let user = "dk"; in
     # Turn off NIX_PATH warnings now that we're using flakes
     checks.verifyNixPath = false;
 
+    # Source: https://medium.com/@zmre/nix-darwin-quick-tip-activate-your-preferences-f69942a93236
+    # Intended to let macOS settings updates take effect without rebooting
+    activationScripts.postUserActivation.text = ''
+      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    '';
+
     defaults = {
+      # Source: https://medium.com/@zmre/nix-darwin-quick-tip-activate-your-preferences-f69942a93236
+      CustomUserPreferences = {
+        "com.apple.desktopservices" = {
+          # Avoid creating .DS_Store files on network or USB volumes
+          DSDontWriteNetworkStores = true;
+          DSDontWriteUSBStores = true;
+        };
+        "com.apple.screensaver" = {
+          # Require password immediately after sleep or screen saver begins
+          askForPassword = 1;
+          askForPasswordDelay = 0;
+        };
+        "com.apple.AdLib" = {
+          allowApplePersonalizedAdvertising = false;
+        };
+        "com.apple.SoftwareUpdate" = {
+          AutomaticCheckEnabled = true;
+          # Check for software updates daily, not just once per week
+          ScheduleFrequency = 1;
+          # Download newly available updates in background
+          AutomaticDownload = 1;
+          # Install System data files & security updates
+          CriticalUpdateInstall = 1;
+        };
+        # Turn on app auto-update
+        "com.apple.commerce".AutoUpdate = true;
+      };
+
       LaunchServices = {
         LSQuarantine = false;
       };
@@ -103,7 +137,6 @@ let user = "dk"; in
       finder = {
         _FXShowPosixPathInTitle = false;
       };
-
 
       trackpad = {
         Clicking = true;
