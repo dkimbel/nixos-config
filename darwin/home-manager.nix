@@ -66,7 +66,6 @@ in
       home.enableNixpkgsReleaseCheck = false;
       home.packages = with pkgs; [
         dockutil
-        karabiner-elements
       ];
       home.stateVersion = "21.11";
       programs = {
