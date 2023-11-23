@@ -35,6 +35,7 @@ let user = "dk"; in
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
+  services.karabiner-elements.enable = true;
 
   # Setup user, packages, programs
   nix = {
