@@ -67,6 +67,12 @@ let user = "dk"; in
     # Turn off NIX_PATH warnings now that we're using flakes
     checks.verifyNixPath = false;
 
+    # Source: https://medium.com/@zmre/nix-darwin-quick-tip-activate-your-preferences-f69942a93236
+    # Lets new settings kick in without a reboot
+    activationScripts.postUserActivation.text = ''
+      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    '';
+
     defaults = {
       CustomUserPreferences = {
         "com.apple.WindowManager" = {
