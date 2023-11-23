@@ -20,7 +20,14 @@ in
   };
 
   homebrew.enable = true;
-  homebrew.casks = pkgs.callPackage ./casks.nix {};
+  homebrew.casks = [
+    "alfred"
+    "appcleaner"
+    "bitwarden"
+    "firefox"
+    "font-sf-mono"
+    "obsidian"
+  ];
 
   # Enable home-manager
   home-manager = {
