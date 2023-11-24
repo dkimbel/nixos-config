@@ -12,6 +12,7 @@ While most of my system and application configuration on macOS is handled by nix
 - I manually created an ssh key and set it up on GitHub by following [GitHub's instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 - Configuring my laptop's display scaling/resolution in System Settings > Displays, to be one setting larger than the default. This can't be configured with any `com.apple` settings in the terminal, so I can't manage it easily with nix-darwin.
 - I set up my Alfred preferences manually, including changing its main hotkey to command-space (which also requires disabling the default macOS setting that binds command-space to Spotlight).
+- I manually ran `touch ~/.hushlogin` to prevent new terminal windows from printing a message about my last login time.
 - I manually configured Rectangle through its application UI, especially to start automatically on login.
 - I gave various permissions to various applications via macOS prompts or in System Settings.
 - I manually chose my wallpaper (no nix-darwin setting for this?), and may have manually configured a few other macOS settings.
