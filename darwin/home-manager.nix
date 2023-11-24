@@ -71,8 +71,11 @@ in
       programs = {
         fish = {
           enable = true;
-          # from https://github.com/LnL7/nix-darwin/issues/122#issuecomment-1659465635
+          # From https://github.com/LnL7/nix-darwin/issues/122#issuecomment-1659465635
           #  and https://github.com/LnL7/nix-darwin/issues/122#issuecomment-1666623924
+          # The ssh-add line lets me use Apple's builtin ssh agent to store my ssh key's password, while separately
+          # having the openssh package give me a more up-to-date `ssh` command. Original source of the idea:
+          # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
           loginShellInit =
             let
               dquote = str: "\"" + str + "\"";
