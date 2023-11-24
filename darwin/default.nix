@@ -25,6 +25,7 @@ let user = "dk"; in
       fd
       gnumake
       killall
+      openssh
       tree
       unzip
       wget

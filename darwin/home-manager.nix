@@ -80,6 +80,7 @@ in
             in ''
               fish_add_path --move --prepend --path ${lib.concatMapStringsSep " " dquote (makeBinPathList osConfig.environment.profiles)}
               set fish_user_paths $fish_user_paths
+              command /usr/bin/ssh-add --apple-use-keychain ~/.ssh/id_ed25519
             '';
         };
         git = {
@@ -118,7 +119,6 @@ in
           extraConfig = ''
             Host github.com
               AddKeysToAgent yes
-              UseKeychain yes
               IdentityFile ~/.ssh/id_ed25519
           '';
         };
