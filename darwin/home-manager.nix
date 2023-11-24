@@ -66,6 +66,7 @@ in
       home.enableNixpkgsReleaseCheck = false;
       home.packages = with pkgs; [
         dockutil
+        rectangle
       ];
       home.stateVersion = "21.11";
       programs = {

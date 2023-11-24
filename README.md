@@ -12,7 +12,9 @@ While most of my system and application configuration on macOS is handled by nix
 - I manually created an ssh key and set it up on GitHub by following [GitHub's instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 - Configuring my laptop's display scaling/resolution in System Settings > Displays, to be one setting larger than the default. This can't be configured with any `com.apple` settings in the terminal, so I can't manage it easily with nix-darwin.
 - I set up my Alfred preferences manually, including changing its main hotkey to command-space (which also requires disabling the default macOS setting that binds command-space to Spotlight).
+- I manually configured Rectangle through its application UI, especially to start automatically on login.
 - I gave various permissions to various applications via macOS prompts or in System Settings.
+- I manually chose my wallpaper (no nix-darwin setting for this?), and may have manually configured a few other macOS settings.
 
 ## Areas for improvement
 
@@ -20,4 +22,4 @@ Besides eliminating any/all of the 'manual steps' above, there are a few things 
 - Getting rid of a couple of notifications about 'sh' background processes that always show up on boot. The background processes themselves are valuable -- I'd like to keep them, just without notifications.
 - For some reason nix-darwin was frequently giving me errors about `/etc/bashrc` when I ran `/bin/build`, so I ended up adding a line to `/bin/build` that deletes `/etc/bashrc`. This is a hack, and requires `sudo` and therefore my password -- fairly inconvenient.
 - On rare occasion, kitty's dock icon will be a '?' instead of its proper icon.
-- On independent rare occasions, kitty will start up without displaying its usual prompt (and maybe not using fish at all?).
+- On independent rare occasions, kitty will start up without displaying its usual prompt (and maybe not using fish at all?). This may only happen if I open it really quickly after my computer starts?
