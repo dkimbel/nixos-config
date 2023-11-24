@@ -115,8 +115,12 @@ in
           };
           settings = {
             adjust_line_height = "125%";
+            confirm_os_window_close = 0;
+            tab_bar_style = "powerline";
+            tab_powerline_style = "slanted";
           };
           shellIntegration.enableFishIntegration = true;
+          theme = "moonlight";
         };
         ssh = {
           enable = true;

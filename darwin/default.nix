@@ -77,6 +77,12 @@ let user = "dk"; in
     defaults = {
       CustomUserPreferences = {
         "com.apple.TextEdit" = {
+          NSAutomaticCapitalizationEnabled = false;
+          NSAutomaticDashSubstitutionEnabled = false;
+          NSAutomaticPeriodSubstitutionEnabled = false;
+          NSAutomaticQuoteSubstitutionEnabled = false;
+          NSAutomaticSpellingCorrectionEnabled = false;
+          NSAutomaticTextCompletionEnabled = false;
           NSShowAppCentricOpenPanelInsteadOfUntitledFile = false;
           RichText = false;
         };
