@@ -129,6 +129,7 @@ in
             size = 13.5;
           };
           keybindings = {
+            "cmd+t" = "new_tab_with_cwd";
             "cmd+1" = "goto_tab 1";
             "cmd+2" = "goto_tab 2";
             "cmd+3" = "goto_tab 3";
@@ -144,6 +145,7 @@ in
             confirm_os_window_close = 0;
             tab_bar_style = "powerline";
             tab_powerline_style = "slanted";
+            window_padding_width = "14 20 20";
           };
           shellIntegration.enableFishIntegration = true;
           theme = "moonlight";
