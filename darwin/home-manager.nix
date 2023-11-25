@@ -83,9 +83,9 @@ in
               fish_add_path --move --prepend --path ${lib.concatMapStringsSep " " dquote (makeBinPathList osConfig.environment.profiles)}
               set fish_user_paths $fish_user_paths
 
-              set -U fish_greeting
+              set fish_greeting
 
-              # The ssh-add line lets me use Apple's builtin ssh agent to store my ssh key's password, while separately
+              # This lets me use Apple's builtin ssh agent to store my ssh key's password, while separately
               # having the openssh package give me a more up-to-date `ssh` command. Original source of the idea:
               # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
               command /usr/bin/ssh-add --apple-use-keychain ~/.ssh/id_ed25519 > /dev/null 2>&1
