@@ -73,32 +73,29 @@ in
       programs = {
         fish = {
           enable = true;
-          loginShellInit =
-            let
-              dquote = str: "\"" + str + "\"";
-              makeBinPathList = map (path: path + "/bin");
-            in ''
-              # From https://github.com/LnL7/nix-darwin/issues/122#issuecomment-1659465635
-              #  and https://github.com/LnL7/nix-darwin/issues/122#issuecomment-1666623924
-              fish_add_path --move --prepend --path ${lib.concatMapStringsSep " " dquote (makeBinPathList osConfig.environment.profiles)}
-              set fish_user_paths $fish_user_paths
+          shellInit = ''
+            # Drawn from https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356, appears
+            # to solve the same problem as https://github.com/LnL7/nix-darwin/issues/122#issuecomment-1659465635
+            if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+              source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+            end
 
-              set -U fish_greeting
+            set -U fish_greeting
 
-              # The ssh-add line lets me use Apple's builtin ssh agent to store my ssh key's password, while separately
-              # having the openssh package give me a more up-to-date `ssh` command. Original source of the idea:
-              # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-              command /usr/bin/ssh-add --apple-use-keychain ~/.ssh/id_ed25519 > /dev/null 2>&1
+            # This lets me use Apple's builtin ssh agent to store my ssh key's password, while separately having
+            # the openssh package give me a more up-to-date `ssh` command. Original source of the idea:
+            # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+            command /usr/bin/ssh-add --apple-use-keychain ~/.ssh/id_ed25519 > /dev/null 2>&1
 
-              function add_newline_before_all_prompts_except_first --on-event fish_prompt
-                # we don't even check the value; if this variable exists, its value is effectively 'true'
-                if set -q already_prompted_this_session
-                  echo
-                else
-                  set -g already_prompted_this_session "true"
-                end
+            function add_newline_before_all_prompts_except_first --on-event fish_prompt
+              # we don't even check the value; if this variable exists, its value is effectively 'true'
+              if set -q already_prompted_this_session
+                echo
+              else
+                set -g already_prompted_this_session "true"
               end
-            '';
+            end
+          '';
         };
 
         git = {
