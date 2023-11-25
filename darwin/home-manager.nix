@@ -191,11 +191,15 @@ in
             add_newline = false;
             format = "$all$time$line_break$jobs$battery$status$os$container$shell$character";
             character = {
-              success_symbol = "[](bold green)";
-              error_symbol = "[󰹆](bold red)";
+              success_symbol = "[❯](bold green)";
+              error_symbol = "[❯](bold red)";
             };
             git_branch = {
               symbol = "";
+            };
+            status = {
+              disabled = false;
+              format = "[$status ]($style)";
             };
             time = {
               disabled = false;
