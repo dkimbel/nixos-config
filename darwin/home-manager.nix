@@ -99,6 +99,11 @@ in
                 end
               end
             '';
+          plugins = [
+            { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
+            { name = "plugin-git"; src = pkgs.fishPlugins.plugin-git.src; }
+            { name = "z"; src = pkgs.fishPlugins.z.src; }
+          ];
         };
 
         git = {
