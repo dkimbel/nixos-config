@@ -205,6 +205,13 @@ in
             git_branch = {
               symbol = "";
             };
+            package = {
+              disabled = true;
+              symbol = "📦";
+            };
+            rust = {
+              symbol = "🦀";
+            };
             status = {
               disabled = false;
               format = "[$status ]($style)";
