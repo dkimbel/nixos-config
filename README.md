@@ -10,6 +10,7 @@ While most of my system and application configuration on macOS is handled by nix
 - Configuring Karabiner to map capslock to escape when tapped and control when held, as described [here](https://gist.github.com/tanyuan/55bca522bf50363ae4573d4bdcf06e2e?permalink_comment_id=4271644#macos).
 - Setting fish as my user's shell; `users.users.dk.shell = pkgs.fish;` was NOT effective, so I had to run `chsh -s /run/current-system/sw/bin/fish` from the terminal.
 - I manually created an ssh key and set it up on GitHub by following [GitHub's instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+- Configuring TouchID for sudo, as described in [this blog post](https://sixcolors.com/post/2023/08/in-macos-sonoma-touch-id-for-sudo-can-survive-updates/). That means running `sudo cp /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local`, then uncommenting the relevant line of your new `sudo_local` file.
 - Configuring my laptop's display scaling/resolution in System Settings > Displays, to be one setting larger than the default. This can't be configured with any `com.apple` settings in the terminal, so I can't manage it easily with nix-darwin.
 - I set up my Alfred preferences manually, including changing its main hotkey to command-space (which also requires disabling the default macOS setting that binds command-space to Spotlight).
 - I manually ran `touch ~/.hushlogin` to prevent new terminal windows from printing a message about my last login time.
