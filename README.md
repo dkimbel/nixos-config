@@ -22,6 +22,6 @@ While most of my system and application configuration on macOS is handled by nix
 
 Besides eliminating any/all of the 'manual steps' above, there are a few things I'd love to improve:
 - Getting rid of a couple of notifications about 'sh' background processes that always show up on boot. The background processes themselves are valuable -- I'd like to keep them, just without notifications.
-- For some reason nix-darwin was frequently giving me errors about `/etc/bashrc` when I ran `/bin/build`, so I ended up adding a line to `/bin/build` that deletes `/etc/bashrc`. This is a hack, and requires `sudo` and therefore my password -- fairly inconvenient.
+- For some reason nix-darwin was frequently giving me errors about `/etc/bashrc` when I ran `/bin/build`, so I ended up adding a line to `/bin/build` that deletes `/etc/bashrc`. This is a hack, and requires `sudo`.
 - On rare occasion, kitty's dock icon will be a '?' instead of its proper icon.
 - On independent rare occasions, kitty will start up without displaying its usual prompt (and maybe not using fish at all?). This may only happen if I open it really quickly after my computer starts?
