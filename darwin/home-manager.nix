@@ -180,6 +180,8 @@ in
             "cmd+7" = "goto_tab 7";
             "cmd+8" = "goto_tab 8";
             "cmd+9" = "goto_tab 9";
+            "cmd+shift+right" = "move_tab_forward";
+            "cmd+shift+left" = "move_tab_backward";
           };
           settings = {
             adjust_line_height = "125%";
