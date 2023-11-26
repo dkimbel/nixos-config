@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, mkAlias, ... }:
 
 let
   name = "Daniel Kimbel";
@@ -33,7 +33,7 @@ in
   # Enable home-manager
   home-manager = {
     useGlobalPkgs = true;
-    users.${user} = { pkgs, config, osConfig, lib, mkAlias, ... }:{
+    users.${user} = { pkgs, config, osConfig, lib, ... }:{
       # Source: https://github.com/nix-community/home-manager/issues/1341#issuecomment-1716147796
       home.activation.aliasApplications = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin (
         let
