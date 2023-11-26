@@ -3,7 +3,7 @@
 let
   name = "Daniel Kimbel";
   user = "dk";
-  email = "dkkimbel@gmail.com";
+  email = "dk@danielkimbel.com";
 in
 {
   imports = [
