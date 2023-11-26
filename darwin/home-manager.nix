@@ -101,6 +101,14 @@ in
                   set -g already_prompted_this_session "true"
                 end
               end
+
+              # Alias for helix that first strips kitty's padding, then adds it back after helix closes
+              # Source/inspiration: https://www.reddit.com/r/vim/comments/ofe72k/comment/h4cptfq
+              function hx
+                kitty @ set-spacing padding=0
+                "${pkgs.helix}/bin/hx" $argv
+                kitty @ set-spacing padding=default
+              end
             '';
           plugins = [
             { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
@@ -185,6 +193,7 @@ in
           };
           settings = {
             adjust_line_height = "125%";
+            allow_remote_control = "true";
             confirm_os_window_close = 0;
             tab_bar_style = "powerline";
             tab_powerline_style = "slanted";
