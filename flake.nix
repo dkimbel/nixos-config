@@ -57,9 +57,10 @@
         macos = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           modules = [
+            ({ pkgs, ... }: {
+              nixpkgs.overlays = [ rust-overlay.overlays.default ];
+            })
             { _module.args = { inherit mkAlias; }; }
-            nix-homebrew.darwinModules.nix-homebrew
-            home-manager.darwinModules.home-manager
             {
               nix-homebrew = {
                 enable = true;
@@ -74,10 +75,9 @@
                 autoMigrate = true;
               };
             }
+            nix-homebrew.darwinModules.nix-homebrew
+            home-manager.darwinModules.home-manager
             ./darwin
-            ({ pkgs, ... }: {
-              nixpkgs.overlays = [ rust-overlay.overlays.default ];
-            })
           ];
         };
       };
