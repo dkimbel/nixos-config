@@ -32,8 +32,9 @@
       url = "github:reckenrode/mkAlias";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
-  outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, homebrew-cask-fonts, nixpkgs, mkAlias }:
+  outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, homebrew-cask-fonts, nixpkgs, mkAlias, rust-overlay }:
     let
       user = "dk";
       systems = [ "aarch64-darwin" ];
@@ -74,6 +75,10 @@
               };
             }
             ./darwin
+            ({ pkgs, ... }: {
+              nixpkgs.overlays = [ rust-overlay.overlays.default ];
+              environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+            })
           ];
         };
       };
