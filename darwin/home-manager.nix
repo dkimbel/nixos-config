@@ -205,6 +205,7 @@ in
             adjust_line_height = "125%";
             allow_remote_control = "true";
             confirm_os_window_close = 0;
+            macos_option_as_alt = "yes";
             tab_bar_style = "powerline";
             tab_powerline_style = "slanted";
             window_padding_width = "14 20 20";
