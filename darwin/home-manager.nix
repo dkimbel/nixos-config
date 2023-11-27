@@ -142,6 +142,10 @@ in
               "inherits" = "material_deep_ocean";
               "comment" = "gray";
             };
+            kanagawa_patched = {
+              "inherits" = "kanagawa";
+              "comment" = "#818077";
+            };
           };
         };
 
