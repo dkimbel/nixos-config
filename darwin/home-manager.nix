@@ -135,7 +135,13 @@ in
           defaultEditor = true;
           enable = true;
           settings = {
-            theme = "gruvbox";
+            theme = "material_deep_ocean_patched";
+          };
+          themes = {
+            material_deep_ocean_patched = {
+              "inherits" = "material_deep_ocean";
+              "comment" = "gray";
+            };
           };
         };
 
