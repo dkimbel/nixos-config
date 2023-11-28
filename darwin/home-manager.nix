@@ -135,7 +135,7 @@ in
           defaultEditor = true;
           enable = true;
           settings = {
-            theme = "kanagawa_patched";
+            theme = "kanagawa";
           };
           themes = {
             material_deep_ocean_patched = {
@@ -146,7 +146,7 @@ in
             };
             kanagawa_patched = {
               "inherits" = "kanagawa";
-              "comment" = "#818077";
+              "comment" = "#7a7870";
             };
           };
         };
