@@ -135,12 +135,14 @@ in
           defaultEditor = true;
           enable = true;
           settings = {
-            theme = "material_deep_ocean_patched";
+            theme = "kanagawa_patched";
           };
           themes = {
             material_deep_ocean_patched = {
               "inherits" = "material_deep_ocean";
+              # use brighter colors for comments and for selection, to improve contrast/visibility
               "comment" = "gray";
+              "ui.selection" = { "bg" = "#2a2e46"; };
             };
             kanagawa_patched = {
               "inherits" = "kanagawa";
