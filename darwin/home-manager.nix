@@ -219,15 +219,15 @@ in
         starship = {
           enable = true;
           enableFishIntegration = true;
-          settings = {
+          settings = let orange="208"; error_color="red"; in {
             add_newline = false;
             format = "$all$time$line_break$jobs$battery$status$os$container$shell$character";
             character = {
               success_symbol = "[❯](bold green)";
-              error_symbol = "[❯](bold red)";
+              error_symbol = "[❯](bold ${error_color})";
             };
             cmd_duration = {
-              style = "bold 208";
+              style = "bold ${orange}";
             };
             directory = {
               style = "bold yellow";
@@ -246,6 +246,7 @@ in
             status = {
               disabled = false;
               format = "[$status ]($style)";
+              style = "bold ${error_color}";
             };
             time = {
               disabled = false;
