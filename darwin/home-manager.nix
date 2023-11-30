@@ -219,20 +219,22 @@ in
         starship = {
           enable = true;
           enableFishIntegration = true;
-          settings = let orange="208"; error_color="red"; in {
+          settings = {
             add_newline = false;
             format = "$all$time$line_break$jobs$battery$status$os$container$shell$character";
             character = {
               success_symbol = "[❯](bold green)";
-              error_symbol = "[❯](bold ${error_color})";
+              error_symbol = "[❯](bold error)";
             };
             cmd_duration = {
-              style = "bold ${orange}";
+              format = "[took](text) [$duration]($style) ";
+              style = "bold orange";
             };
             directory = {
               style = "bold yellow";
             };
             git_branch = {
+              format = "[on](text) [$symbol$branch(:$remote_branch)]($style) ";
               style = "bold blue";
               symbol = "";
             };
@@ -240,16 +242,25 @@ in
               disabled = true;
               symbol = "📦";
             };
+            palette = "custom";
+            palettes = {
+              custom = {
+                error = "red";
+                orange = "208";
+                text = "#6b7e97";
+              };
+            };
             rust = {
               symbol = "🦀";
             };
             status = {
               disabled = false;
               format = "[$status ]($style)";
-              style = "bold ${error_color}";
+              style = "bold error";
             };
             time = {
               disabled = false;
+              format = "[at](text) [$time]($style) ";
               time_format = "%-I:%M%P";
               use_12hr = true;
             };
