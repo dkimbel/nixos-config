@@ -247,7 +247,9 @@ in
               custom = {
                 error = "red";
                 orange = "208";
-                text = "#6b7e97";
+                # Kaolin Aurora's background color, #14191e, lightened
+                # https://github.com/kovidgoyal/kitty-themes/blob/master/themes/Kaolin_Aurora.conf
+                text = "#67809a";
               };
             };
             rust = {
