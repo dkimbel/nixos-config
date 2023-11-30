@@ -213,7 +213,7 @@ in
             window_padding_width = "14 20 20";
           };
           shellIntegration.enableFishIntegration = true;
-          theme = "moonlight";
+          theme = "Kaolin Aurora";
         };
 
         starship = {
@@ -226,7 +226,14 @@ in
               success_symbol = "[❯](bold green)";
               error_symbol = "[❯](bold red)";
             };
+            cmd_duration = {
+              style = "bold 208";
+            };
+            directory = {
+              style = "bold yellow";
+            };
             git_branch = {
+              style = "bold blue";
               symbol = "";
             };
             package = {
