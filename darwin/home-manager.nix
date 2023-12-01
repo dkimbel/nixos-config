@@ -65,12 +65,11 @@ in
           ''
       );
       home.enableNixpkgsReleaseCheck = false;
-      home.packages = let
-        rust-bin = pkgs.rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
-      in with pkgs; [
+      home.packages = with pkgs; [
         dockutil
         rectangle
-        rust-bin
+        rust-analyzer
+        rust-bin.stable.latest.default
       ];
       home.stateVersion = "21.11";
       programs = {
