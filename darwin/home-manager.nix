@@ -238,6 +238,9 @@ in
               style = "bold blue";
               symbol = "";
             };
+            git_status = {
+              deleted = "x";
+            };
             package = {
               disabled = true;
               symbol = "📦";
