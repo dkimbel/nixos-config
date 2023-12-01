@@ -256,6 +256,7 @@ in
               };
             };
             rust = {
+              format = "[via](text) [$symbol($version )]($style)";
               symbol = "🦀";
             };
             status = {
