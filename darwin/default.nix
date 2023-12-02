@@ -23,6 +23,7 @@ let user = "dk"; in
     systemPackages = with pkgs; [
       coreutils
       fd
+      fzf
       gnumake
       killall
       openssh
