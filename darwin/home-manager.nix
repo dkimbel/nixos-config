@@ -248,7 +248,8 @@ in
             palettes = {
               custom = {
                 error = "red";
-                orange = "208";
+                # Custom orange that matches Kaolin Aurora IMO; explored using https://coolors.co
+                orange = "#FF925C";
                 # Kaolin Aurora's background color, #14191e, lightened
                 # https://github.com/kovidgoyal/kitty-themes/blob/master/themes/Kaolin_Aurora.conf
                 text = "#67809a";
