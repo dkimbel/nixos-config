@@ -249,7 +249,9 @@ in
               custom = {
                 error = "red";
                 # Custom orange that matches Kaolin Aurora IMO; explored using https://coolors.co
-                orange = "#FF925C";
+                # Slightly paler alternative: #FF9661
+                # Slightly darker alternative: #FF925C
+                orange = "#FF945F";
                 # Kaolin Aurora's background color, #14191e, lightened
                 # https://github.com/kovidgoyal/kitty-themes/blob/master/themes/Kaolin_Aurora.conf
                 text = "#67809a";
