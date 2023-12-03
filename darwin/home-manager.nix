@@ -104,9 +104,14 @@ in
               # Alias for helix that first strips kitty's padding, then adds it back after helix closes
               # Source/inspiration: https://www.reddit.com/r/vim/comments/ofe72k/comment/h4cptfq
               function hx
-                kitty @ set-spacing padding=0
+                # only issue commands to Kitty if we're actually running from within a Kitty terminal
+                if test -n "$KITTY_WINDOW_ID"
+                  kitty @ set-spacing padding=0
+                end
                 "${pkgs.helix}/bin/hx" $argv
-                kitty @ set-spacing padding=default
+                if test -n "$KITTY_WINDOW_ID"
+                  kitty @ set-spacing padding=default
+                end
               end
             '';
           plugins = [
