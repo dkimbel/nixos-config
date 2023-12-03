@@ -141,6 +141,7 @@ in
           settings = {
             theme = "kanagawa";
             editor = {
+              scrolloff = 999;
               line-number = "relative";
               auto-save = true;
               completion-trigger-len = 1;
@@ -153,7 +154,6 @@ in
               };
               lsp = {
                 display-messages = true;
-                display-inlay-hints = true;
               };
               statusline = {
                 left = [
@@ -178,6 +178,11 @@ in
                   "spacer"
                   "position"
                 ];
+              };
+            };
+            keys = {
+              normal = {
+                space.H = ":toggle lsp.display-inlay-hints";
               };
             };
           };
