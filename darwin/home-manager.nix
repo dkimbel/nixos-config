@@ -163,7 +163,6 @@ in
                   "spacer"
                   "version-control"
                   "spacer"
-                  "spacer"
                   "file-modification-indicator"
                 ];
                 center = [
@@ -181,6 +180,23 @@ in
                 ];
               };
             };
+          };
+          languages = {
+            language = [{
+              name = "rust";
+              rulers = [100];
+              auto-pairs = {
+                "(" = ")";
+                "{" = "}";
+                "[" = "]";
+                "'" = "'";
+                "\"" = "\"";
+                "`" = "`";
+                # non-defaults below
+                "<" = ">";
+                "|" = "|";
+              };
+            }];
           };
           themes = {
             material_deep_ocean_patched = {
