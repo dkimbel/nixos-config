@@ -140,6 +140,47 @@ in
           enable = true;
           settings = {
             theme = "kanagawa";
+            editor = {
+              line-number = "relative";
+              auto-save = true;
+              completion-trigger-len = 1;
+              idle-timeout = 50;
+              rulers = [120];
+              cursor-shape = {
+                insert = "bar";
+                normal = "block";
+                select = "underline";
+              };
+              lsp = {
+                display-messages = true;
+                display-inlay-hints = true;
+              };
+              statusline = {
+                left = [
+                  "mode"
+                  "spinner"
+                  "file-name"
+                  "spacer"
+                  "version-control"
+                  "spacer"
+                  "spacer"
+                  "file-modification-indicator"
+                ];
+                center = [
+                  "read-only-indicator"
+                  "register"
+                  "file-encoding"
+                ];
+                right = [
+                  "diagnostics"
+                  "selections"
+                  "spacer"
+                  "position-percentage"
+                  "spacer"
+                  "position"
+                ];
+              };
+            };
           };
           themes = {
             material_deep_ocean_patched = {
