@@ -156,6 +156,9 @@ in
               lsp = {
                 display-messages = true;
               };
+              soft-wrap = {
+                enable = true;
+              };
               statusline = {
                 left = [
                   "mode"
@@ -320,8 +323,8 @@ in
                 error = "red";
                 # Custom orange that matches Kaolin Aurora IMO; explored using https://coolors.co
                 # Slightly paler alternative: #FF9661
-                # Slightly darker alternative: #FF925C
-                orange = "#FF945F";
+                # Slightly darker alternative: #FF945F
+                orange = "#FF9560";
                 # Kaolin Aurora's background color, #14191e, lightened
                 # https://github.com/kovidgoyal/kitty-themes/blob/master/themes/Kaolin_Aurora.conf
                 text = "#67809a";
