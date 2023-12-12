@@ -143,6 +143,7 @@ in
             editor = {
               scrolloff = 999;
               line-number = "relative";
+              mouse = false;
               auto-save = true;
               completion-trigger-len = 1;
               idle-timeout = 50;
