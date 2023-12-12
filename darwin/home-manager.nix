@@ -297,7 +297,7 @@ in
             };
             cmd_duration = {
               format = "[took](text) [$duration]($style) ";
-              style = "bold orange";
+              style = "bold yellow";
             };
             directory = {
               style = "bold yellow";
@@ -339,6 +339,7 @@ in
             time = {
               disabled = false;
               format = "[at](text) [$time]($style) ";
+              style = "bold orange";
               time_format = "%-I:%M%P";
               use_12hr = true;
             };
