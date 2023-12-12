@@ -297,7 +297,7 @@ in
             };
             cmd_duration = {
               format = "[took](text) [$duration]($style) ";
-              style = "bold yellow";
+              style = "bold cyan";
             };
             directory = {
               style = "bold yellow";
