@@ -164,6 +164,9 @@ in
                   "version-control"
                   "spacer"
                   "file-modification-indicator"
+                  "spacer"
+                  "spacer"
+                  "diagnostics"
                 ];
                 center = [
                   "read-only-indicator"
@@ -171,7 +174,6 @@ in
                   "file-encoding"
                 ];
                 right = [
-                  "diagnostics"
                   "selections"
                   "spacer"
                   "position-percentage"
