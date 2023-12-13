@@ -300,7 +300,7 @@ in
             };
             cmd_duration = {
               format = "[took](text) [$duration]($style) ";
-              style = "bold purple";
+              style = "bold cyan";
             };
             directory = {
               style = "bold yellow";
