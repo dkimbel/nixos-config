@@ -152,7 +152,7 @@ in
               auto-save = true;
               completion-trigger-len = 1;
               idle-timeout = 50;
-              rulers = [120];
+              rulers = [100];
               cursor-shape = {
                 insert = "bar";
                 normal = "block";
