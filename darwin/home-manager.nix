@@ -1,4 +1,4 @@
-{ config, pkgs, lib, mkAlias, ... }:
+{ pkgs, mkAlias, ... }:
 
 let
   name = "Daniel Kimbel";
@@ -67,9 +67,14 @@ in
       home.enableNixpkgsReleaseCheck = false;
       home.packages = with pkgs; [
         dockutil
+        lldb_17
+        llvmPackages_17.clang-unwrapped
+        nil # nix language server
         rectangle
         rust-analyzer
         rust-bin.stable.latest.default
+        zig
+        zls # zig language server
       ];
       home.stateVersion = "21.11";
       programs = {
