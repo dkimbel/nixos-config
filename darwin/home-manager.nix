@@ -66,6 +66,7 @@ in
       );
       home.enableNixpkgsReleaseCheck = false;
       home.packages = with pkgs; [
+        discord
         dockutil
         lldb_17
         llvmPackages_17.clang-unwrapped
@@ -373,6 +374,7 @@ in
     { path = "/Applications/Firefox.app/"; }
     { path = "${pkgs.kitty}/Applications/kitty.app/"; }
     { path = "/Applications/Obsidian.app/"; }
+    { path = "${pkgs.discord}/Applications/Discord.app/"; }
     { path = "/Applications/Bitwarden.app/"; }
   ];
 }
