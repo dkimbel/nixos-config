@@ -74,6 +74,7 @@ in
         rectangle
         rust-analyzer
         rust-bin.stable.latest.default
+        taplo # toml language server
         zig
         zls # zig language server
       ];
@@ -297,62 +298,7 @@ in
         starship = {
           enable = true;
           enableFishIntegration = true;
-          settings = {
-            add_newline = false;
-            format = "$all$time$line_break$jobs$battery$status$os$container$shell$character";
-            character = {
-              success_symbol = "[❯](bold green)";
-              error_symbol = "[❯](bold error)";
-            };
-            cmd_duration = {
-              format = "[took](text) [$duration]($style) ";
-              style = "bold cyan";
-            };
-            directory = {
-              style = "bold yellow";
-            };
-            git_branch = {
-              format = "[on](text) [$symbol$branch(:$remote_branch)]($style) ";
-              style = "bold blue";
-              symbol = "";
-            };
-            git_status = {
-              deleted = "x";
-            };
-            package = {
-              disabled = true;
-              symbol = "📦";
-            };
-            palette = "custom";
-            palettes = {
-              custom = {
-                error = "red";
-                # Custom orange that matches Kaolin Aurora IMO; explored using https://coolors.co
-                # Slightly paler alternative: #FF9661
-                # Slightly darker alternative: #FF945F
-                orange = "#FF9560";
-                # Kaolin Aurora's background color, #14191e, lightened
-                # https://github.com/kovidgoyal/kitty-themes/blob/master/themes/Kaolin_Aurora.conf
-                text = "#617a92";
-              };
-            };
-            rust = {
-              format = "[via](text) [$symbol($version )]($style)";
-              symbol = "🦀";
-            };
-            status = {
-              disabled = false;
-              format = "[$status ]($style)";
-              style = "bold error";
-            };
-            time = {
-              disabled = false;
-              format = "[at](text) [$time]($style) ";
-              style = "bold orange";
-              time_format = "%-I:%M%P";
-              use_12hr = true;
-            };
-          };
+          settings = pkgs.lib.importTOML ../config/starship.toml;
         };
 
         ssh = {
@@ -373,8 +319,8 @@ in
     { path = "/System/Applications/Music.app/"; }
     { path = "/Applications/Firefox.app/"; }
     { path = "${pkgs.kitty}/Applications/kitty.app/"; }
-    { path = "/Applications/Obsidian.app/"; }
     { path = "${pkgs.discord}/Applications/Discord.app/"; }
+    { path = "/Applications/Obsidian.app/"; }
     { path = "/Applications/Bitwarden.app/"; }
   ];
 }
