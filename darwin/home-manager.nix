@@ -66,10 +66,11 @@ in
       );
       home.enableNixpkgsReleaseCheck = false;
       home.packages = with pkgs; [
+        clang-tools_17 # includes C language server
         discord
         dockutil
         lldb_17
-        llvmPackages_17.clang-unwrapped
+        llvmPackages_17.libcxxClang
         nil # nix language server
         rectangle
         rust-analyzer
