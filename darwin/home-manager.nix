@@ -146,75 +146,8 @@ in
         helix = {
           defaultEditor = true;
           enable = true;
-          settings = {
-            theme = "kanagawa";
-            editor = {
-              scrolloff = 999;
-              line-number = "relative";
-              mouse = false;
-              auto-save = true;
-              completion-trigger-len = 1;
-              idle-timeout = 50;
-              rulers = [100];
-              cursor-shape = {
-                insert = "bar";
-                normal = "block";
-                select = "underline";
-              };
-              lsp = {
-                display-messages = true;
-              };
-              soft-wrap = {
-                enable = true;
-              };
-              statusline = {
-                left = [
-                  "mode"
-                  "spinner"
-                  "file-name"
-                  "spacer"
-                  "version-control"
-                  "spacer"
-                  "file-modification-indicator"
-                ];
-                center = [
-                  "read-only-indicator"
-                  "register"
-                  "file-encoding"
-                ];
-                right = [
-                  "diagnostics"
-                  "selections"
-                  "spacer"
-                  "position-percentage"
-                  "spacer"
-                  "position"
-                ];
-              };
-            };
-            keys = {
-              normal = {
-                space.H = ":toggle lsp.display-inlay-hints";
-              };
-            };
-          };
-          languages = {
-            language = [{
-              name = "rust";
-              rulers = [100];
-              auto-pairs = {
-                "(" = ")";
-                "{" = "}";
-                "[" = "]";
-                "'" = "'";
-                "\"" = "\"";
-                "`" = "`";
-                # non-defaults below
-                "<" = ">";
-                "|" = "|";
-              };
-            }];
-          };
+          settings = pkgs.lib.importTOML ../config/helix/config.toml;
+          languages = pkgs.lib.importTOML ../config/helix/languages.toml;
           themes = {
             material_deep_ocean_patched = {
               "inherits" = "material_deep_ocean";

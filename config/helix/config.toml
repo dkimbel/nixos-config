@@ -1,0 +1,29 @@
+theme = "kanagawa"
+
+[editor]
+scrolloff = 999
+line-number = "relative"
+mouse = false
+auto-save = true
+completion-trigger-len = 1
+idle-timeout = 50
+rulers = [100]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.lsp]
+display-messages = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "spacer", "version-control", "spacer", "file-modification-indicator"]
+center = ["read-only-indicator", "register", "file-encoding"]
+right = ["diagnostics", "selections", "spacer", "position-percentage", "spacer", "position"]
+
+[keys.normal.space]
+H = ":toggle lsp.display-inlay-hints"

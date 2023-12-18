@@ -1,0 +1,15 @@
+[[language]]
+name = "rust"
+rulers = [100]
+
+[language.auto-pairs]
+"(" = ")"
+"{" = "}"
+"[" = "]"
+"'" = "'"
+"\"" = "\""
+"`" = "`"
+# non-defaults below
+"<" = ">"
+"|" = "|"
+
