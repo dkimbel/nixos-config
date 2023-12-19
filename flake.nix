@@ -60,7 +60,7 @@
             ({ pkgs, ... }: {
               nixpkgs.overlays = [ rust-overlay.overlays.default ];
             })
-            { _module.args = { inherit mkAlias; }; }
+            { _module.args = { inherit mkAlias nixpkgs; }; }
             {
               nix-homebrew = {
                 enable = true;

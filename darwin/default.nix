@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, nixpkgs, ... }:
 
 let user = "dk"; in
 
@@ -23,6 +23,7 @@ let user = "dk"; in
     systemPackages = with pkgs; [
       coreutils
       fd
+      file
       fzf
       gnumake
       killall
@@ -42,6 +43,10 @@ let user = "dk"; in
   # Setup user, packages, programs
   nix = {
     package = pkgs.nixUnstable;
+    # This shouldn't be strictly necessary, but it lets `nix-info -m` output my "nixpkgs" properly
+    # and also makes it possible to use the nix-index package. Source;
+    # https://github.com/nix-community/nix-index/issues/167#issuecomment-989849343
+    nixPath = [ "nixpkgs=${nixpkgs}" ];
     settings.trusted-users = [ "@admin" "${user}" ];
 
     gc = {
