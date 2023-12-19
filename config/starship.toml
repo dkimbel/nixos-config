@@ -66,3 +66,6 @@ style = "bold orange"
 time_format = "%-I:%M%P"
 use_12hr = true
 
+[zig]
+format = "[via](text) [$symbol($version)]($style) "
+symbol = "󱐋"
