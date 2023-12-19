@@ -21,6 +21,7 @@ let user = "dk"; in
   environment = {
     shells = [ pkgs.fish ];
     systemPackages = with pkgs; [
+      binutils  # provides objdump
       coreutils
       fd
       file
