@@ -71,6 +71,7 @@ in
         dockutil
         lldb_17
         llvmPackages_17.libcxxClang
+        marksman # markdown language server
         nil # nix language server
         rectangle
         rust-analyzer
