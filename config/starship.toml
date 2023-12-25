@@ -50,6 +50,10 @@ deleted = "x"
 [package]
 disabled = true
 
+[python]
+format = "[via](text) [${symbol}${pyenv_prefix}(${version})(($virtualenv))]($style) "
+symbol = "🐍"
+
 [rust]
 format = "[via](text) [$symbol($version)]($style) "
 symbol = "🦀"

@@ -73,6 +73,8 @@ in
         llvmPackages_17.libcxxClang
         marksman # markdown language server
         nil # nix language server
+        python311
+        python311Packages.python-lsp-server
         rectangle
         rust-analyzer
         rust-bin.stable.latest.default
