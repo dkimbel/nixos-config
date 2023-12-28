@@ -103,7 +103,7 @@ in
               # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
               command /usr/bin/ssh-add --apple-use-keychain ~/.ssh/id_ed25519 > /dev/null 2>&1
 
-              abbr --add cl cc -Wall -Wextra -Werror -std=c99 -pedantic
+              abbr --add cl cc -Wall -Wextra -Werror -std=gnu17 -pedantic
 
               function add_newline_before_all_prompts_except_first --on-event fish_prompt
                 # we don't even check the value; if this variable exists, its value is effectively 'true'
