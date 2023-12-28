@@ -23,11 +23,13 @@ let user = "dk"; in
     systemPackages = with pkgs; [
       binutils  # provides objdump
       coreutils
+      curl
       fd
       file
       fzf
       gnumake
       killall
+      man-pages
       openssh
       ripgrep
       tree

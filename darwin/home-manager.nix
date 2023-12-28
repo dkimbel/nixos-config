@@ -70,7 +70,9 @@ in
         discord
         dockutil
         lldb_17
+        llvmPackages_17.clang-manpages
         llvmPackages_17.libcxxClang
+        llvmPackages_17.lldb-manpages
         marksman # markdown language server
         nil # nix language server
         python311
