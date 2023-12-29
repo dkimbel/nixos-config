@@ -69,6 +69,7 @@ in
         clang-tools_17 # includes C language server
         discord
         dockutil
+        hyperfine
         lldb_17
         llvmPackages_17.clang-manpages
         llvmPackages_17.libcxxClang
